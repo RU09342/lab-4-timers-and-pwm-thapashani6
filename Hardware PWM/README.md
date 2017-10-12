@@ -5,6 +5,7 @@
 ### Code
 The PWM lab had to be done again this time using Timer modules to directly output to the LED. This required the manipulation of a new resigister the PxSEL. The value of this register can shift the Port from GPIO to the pheripherals in the boards such as timer modules. Some boards have a PxSEL and PxSEL2 since they have more pheripherals to multiplex through. The following table is a general case on how the PxSEL register works found in the user : 
   Table 1: PxSEL Registers 
+
 | PxSEL2 | PxSEL | Pin Function|
 | --- | --- | --- | 
 | 0 | 0 | I/O function is selected. |
@@ -15,7 +16,7 @@ The PWM lab had to be done again this time using Timer modules to directly outpu
 Furthermore, the PxDIR values of the Port can also influence the pheripherals selected from the PxSEL regsiters. Each board has different pheripherals on each pin, so it is nesscessary to check the datasheets to find which pin corresponds to which pheripheral.
 
 ### Differences
-Besides the different values the PxSEL registers take, there were no differences between the boards. The lab is also similar to the Software PWM besides the fact that the Timers dont need ISRs since they directly output to the LEDs. 
+Besides the different values the PxSEL registers take, there were no major differences between the boards. The lab is also similar to the Software PWM besides the fact that the Timers dont need ISRs since they directly output to the LEDs. However, the F5529 could not be fully tested since a timer module was not one of the peripherials on any of the LED pins unlike every other board. Jumper wires could connect the pin with a timer to an LED. Unfortunetly, this was not tested.  
 
 #### Code Exmaple with FR2311 and FR6989
 ```
